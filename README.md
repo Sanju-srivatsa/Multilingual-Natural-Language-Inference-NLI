@@ -202,6 +202,7 @@ Two models were evaluated for multilingual NLI:
 A comparative bar chart was created to visualize the performance metrics of the two models. Key findings:
 - **XLM-RoBERTa**: Consistently outperformed Sentence Transformers in all metrics.
 - **Sentence Transformers**: Highlighted the trade-off between computational efficiency and accuracy.
+![image](https://github.com/user-attachments/assets/566afce4-9436-434b-a7dd-949652d628cf)
 
 ---
 
