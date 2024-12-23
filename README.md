@@ -4,21 +4,92 @@
 ## Kaggle Notebook: 
 https://www.kaggle.com/code/sanjusrivatsa9/multilingual-natural-language-inference-nli
 
+
 ## **Introduction**
 
-Natural Language Inference (NLI), also known as Recognizing Textual Entailment (RTE), is a foundational task in Natural Language Processing (NLP). The goal of NLI is to determine the semantic relationship between two sentences: a **premise** and a **hypothesis**. These relationships are classified into three categories:
+Natural Language Inference (NLI), sometimes called Recognizing Textual Entailment (RTE), is an essential task in the field of Natural Language Processing (NLP). At its core, NLI involves **determining the relationship between two sentences** and understanding how they relate to each other. These two sentences are called:
 
-1. **Entailment**: The hypothesis logically follows from the premise.
-2. **Contradiction**: The hypothesis contradicts the premise.
-3. **Neutral**: The relationship between the premise and hypothesis is unclear or unrelated.
+1. **Premise**: This is the "starting point" or the first sentence. It presents a statement or fact that we accept as true.
+   - Example: *"All dogs are animals."*
+2. **Hypothesis**: This is the second sentence, which we analyze to determine how it relates to the premise.
+   - Example: *"Some animals are dogs."*
 
-This project tackles the NLI task in a **multilingual context**, where the models need to process and analyze text in multiple languages, accounting for the unique semantic, syntactic, and linguistic variations across languages. 
+### **Types of Relationships in NLI**
+NLI classifies the relationship between the premise and the hypothesis into one of three categories:
+1. **Entailment**: The hypothesis logically follows from the premise.  
+   - Example:  
+     Premise: *"All dogs are animals."*  
+     Hypothesis: *"Some animals are dogs."*  
+     **Relationship**: Entailment (The hypothesis is true if the premise is true.)
+2. **Contradiction**: The hypothesis directly contradicts the premise.  
+   - Example:  
+     Premise: *"All dogs are animals."*  
+     Hypothesis: *"No animals are dogs."*  
+     **Relationship**: Contradiction (The hypothesis is false if the premise is true.)
+3. **Neutral**: The hypothesis neither follows from nor contradicts the premise.  
+   - Example:  
+     Premise: *"All dogs are animals."*  
+     Hypothesis: *"Some animals live in the ocean."*  
+     **Relationship**: Neutral (The hypothesis is unrelated to the premise.)
 
-The focus is on comparing the performance of two advanced NLP models for multilingual NLI:
-- **XLM-RoBERTa**: A transformer-based multilingual model known for its robust performance on multilingual tasks.
-- **Sentence Transformers**: A lightweight embedding-based model designed for semantic similarity and related tasks.
+### **Why is NLI Important?**
+Understanding relationships between sentences is crucial in many real-world applications:
+- **Customer Support**: Automatically understanding user queries and providing logical responses.
+- **Legal Contracts**: Identifying contradictory clauses in agreements.
+- **Search Engines**: Improving query results by understanding the intent behind user queries.
+- **Content Moderation**: Detecting contradictions in claims, such as fake news detection.
 
-The project aims to evaluate the effectiveness of these models using a multilingual dataset and assess their trade-offs in terms of accuracy, efficiency, and computational requirements.
+---
+
+## **Real-World Example of NLI**
+Imagine a virtual assistant like Amazon Alexa or Siri:
+- **Scenario**: A user asks, *"Can I park here for free?"*  
+- The assistant retrieves a statement (premise): *"Parking is free for the first two hours."*
+- **Analysis**: The assistant uses NLI to determine if the user's question (hypothesis) aligns with the premise.  
+- **Result**:  
+  - If the user plans to park for 1 hour: *Entailment* (Yes, it is free.)
+  - If the user plans to park for 5 hours: *Contradiction* (No, it is not free after 2 hours.)
+  - If the user asks about parking for bicycles: *Neutral* (The statement does not mention bicycles.)
+
+---
+
+## **Objective of the Project**
+This project focuses on **multilingual NLI**, which adds an additional layer of complexity: **handling multiple languages**. For instance, the premise may be in English, but the hypothesis could be in French, Spanish, or any other language. This requires the model to:
+1. Understand linguistic nuances across languages.
+2. Accurately identify relationships despite variations in sentence structure and word usage.
+
+---
+
+## **Key Challenges in Multilingual NLI**
+1. **Language Diversity**: Words and sentence structures differ significantly across languages.
+   - Example: In English, we say *"The car is red."* while in Spanish, it is *"El coche es rojo."*
+2. **Semantic Nuances**: A word might have multiple meanings based on context.
+   - Example: The word *"bank"* could mean a financial institution or the side of a river.
+3. **Data Representation**: Multilingual data often requires advanced models to represent text effectively across languages.
+
+---
+
+## **Real-World Applications**
+1. **Multilingual Chatbots**:
+   - Chatbots like those used in e-commerce must handle customer queries in multiple languages and provide consistent responses.
+2. **Content Moderation**:
+   - Platforms like Facebook and YouTube can use multilingual NLI to detect misinformation or contradictory statements in user posts.
+3. **Legal Analysis**:
+   - Comparing clauses in contracts written in different languages to identify inconsistencies or contradictions.
+4. **Translation Verification**:
+   - Ensuring that translated text retains the original meaning.
+
+**Example**:  
+Imagine a travel website where a user asks in German, *"Ist das Frühstück inklusive?"* (Is breakfast included?).  
+The system retrieves a statement in English: *"The hotel offers a complimentary breakfast for all guests."*  
+Using NLI, the system can infer the relationship and respond with *Entailment*, confirming that breakfast is included.
+
+---
+
+## **Why Multilingual NLI Matters?**
+In today’s globalized world, businesses and platforms interact with users across different languages. By enabling systems to understand and infer relationships across multiple languages, **multilingual NLI bridges the gap between linguistic and cultural barriers**.
+
+This project demonstrates the implementation of advanced multilingual NLP models to tackle these challenges, enabling systems to handle multilingual scenarios effectively.
 
 ---
 
