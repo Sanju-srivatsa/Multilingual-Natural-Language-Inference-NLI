@@ -120,6 +120,13 @@ EDA was performed to gain insights into the dataset, including:
 - **Class Distribution**: Examining the frequency of labels to ensure balanced representation.
 - **Language Diversity**: Analyzing the distribution of samples across languages.
 - **Text Lengths**: Evaluating the lengths of premise and hypothesis sentences to understand data complexity.
+![image](https://github.com/user-attachments/assets/08e4db1d-35f9-4ff7-a4b1-26e33747a12b)
+![image](https://github.com/user-attachments/assets/5211aa4c-c1bb-429e-9a3a-184d6f41dfca)
+![image](https://github.com/user-attachments/assets/ae661e36-2a9f-45f2-a51f-a6ec6beab8a3)
+![image](https://github.com/user-attachments/assets/217545b1-fbe5-4145-b2fb-4fb92b32e85d)
+![image](https://github.com/user-attachments/assets/9e08e57b-b50d-41f0-9b70-540ca46fb561)
+![image](https://github.com/user-attachments/assets/059140f5-d11a-4a88-a2f5-ec1dd8a8038c)
+![image](https://github.com/user-attachments/assets/e86826e2-2af7-456b-a414-cfa1d4a63269)
 
 #### **Key Observations**
 - The dataset is diverse, with 15 different languages.
