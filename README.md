@@ -120,14 +120,114 @@ EDA was performed to gain insights into the dataset, including:
 - **Class Distribution**: Examining the frequency of labels to ensure balanced representation.
 - **Language Diversity**: Analyzing the distribution of samples across languages.
 - **Text Lengths**: Evaluating the lengths of premise and hypothesis sentences to understand data complexity.
-![image](https://github.com/user-attachments/assets/08e4db1d-35f9-4ff7-a4b1-26e33747a12b)
-![image](https://github.com/user-attachments/assets/5211aa4c-c1bb-429e-9a3a-184d6f41dfca)
-![image](https://github.com/user-attachments/assets/ae661e36-2a9f-45f2-a51f-a6ec6beab8a3)
-![image](https://github.com/user-attachments/assets/217545b1-fbe5-4145-b2fb-4fb92b32e85d)
-![image](https://github.com/user-attachments/assets/9e08e57b-b50d-41f0-9b70-540ca46fb561)
-![image](https://github.com/user-attachments/assets/059140f5-d11a-4a88-a2f5-ec1dd8a8038c)
-![image](https://github.com/user-attachments/assets/e86826e2-2af7-456b-a414-cfa1d4a63269)
 
+---
+
+### **Label Distribution in Train Dataset**
+**Description:** 
+This bar chart illustrates the distribution of labels (categories) in the training dataset. The three labels represent:
+- **0: Neutral** - The premise and hypothesis are unrelated.
+- **1: Entailment** - The hypothesis logically follows from the premise.
+- **2: Contradiction** - The hypothesis contradicts the premise.
+
+![image](https://github.com/user-attachments/assets/9fca84dc-8411-425e-85dd-9d76625f12ef)
+**Observations:**
+- The label distribution is fairly balanced, with slightly more instances of "Neutral" (label 0) compared to "Contradiction" (label 2) and "Entailment" (label 1). 
+- Balanced label distribution ensures that the model does not become biased toward a specific class during training.
+
+---
+
+### **Language Distribution in Train Dataset**
+**Description:**
+This horizontal bar chart shows the frequency of samples for each language in the training dataset.
+
+![image](https://github.com/user-attachments/assets/fa67ff08-5ba2-4a79-94c7-cf48ecc1e9ba)
+
+**Observations:**
+- **English** dominates the dataset with the highest frequency of samples, followed by languages like **Chinese**, **Arabic**, **French**, and others.
+- This imbalance in language distribution indicates that the model may perform better for languages with more samples (like English) and may face challenges for underrepresented languages (like Bulgarian).
+
+---
+
+### **Distribution of Premise and Hypothesis Lengths**
+**Description:**
+This histogram compares the lengths (character count) of premises and hypotheses in the training dataset.
+
+![image](https://github.com/user-attachments/assets/d0a5cd57-c2d5-4b82-8bc1-63fdb4edd18e)
+
+
+**Observations:**
+- Premises tend to have a broader range of lengths compared to hypotheses.
+- The majority of both premises and hypotheses fall within a specific length range (0–200 characters), which suggests relatively concise statements in the dataset.
+- Understanding text length distributions is important for preprocessing, such as tokenization and padding during model training.
+
+---
+
+### **Distribution of Word Counts in Premise and Hypothesis**
+**Description:**
+This histogram displays the distribution of word counts in premises and hypotheses.
+
+![image](https://github.com/user-attachments/assets/20b9ae46-474a-42fa-90a0-88b45e0c7b16)
+
+**Observations:**
+- Similar to character length, most premises and hypotheses have a limited number of words, typically under 30 words.
+- Premises tend to have slightly higher word counts compared to hypotheses, likely because premises often provide more context.
+
+**Significance:**
+Word count analysis helps identify potential preprocessing needs like truncation for excessive lengths or adjustments in tokenization strategies.
+
+---
+
+### **Hypothesis Length by Label**
+**Description:**
+This boxplot shows the relationship between hypothesis length and the labels (Neutral, Entailment, Contradiction).
+
+![image](https://github.com/user-attachments/assets/dc45dfec-e0ce-4cd2-b5a9-6bcf0191c116)
+
+
+**Observations:**
+- Hypothesis lengths are similar across all labels, with no significant variation.
+- Outliers (longer hypotheses) are present but do not significantly affect the median lengths.
+
+**Insights:**
+The consistent hypothesis length distribution across labels indicates that hypothesis length is not a distinguishing feature for determining labels.
+
+---
+### **Premise Length by Label**
+
+**Description:**
+This boxplot illustrates the distribution of premise lengths (in characters) for each label in the dataset. The labels represent:
+- **0: Neutral** - The premise and hypothesis are unrelated.
+- **1: Entailment** - The hypothesis logically follows from the premise.
+- **2: Contradiction** - The hypothesis contradicts the premise.
+![image](https://github.com/user-attachments/assets/44649787-38c6-4938-ba9a-0001df240f60)
+
+**Observations:**
+- The median premise length is relatively consistent across all labels.
+- There is a similar range of premise lengths for each label, with most premises falling below 200 characters.
+- Outliers (long premises) exist in all three labels, with some reaching lengths of over 800 characters.
+
+**Insights:**
+- The consistency in premise length across labels suggests that premise length alone may not be a strong distinguishing factor for label classification.
+- The presence of long premises might indicate complex statements or additional context that could impact the model's understanding and require efficient handling during tokenization.
+
+This analysis highlights the importance of preprocessing long premises to ensure that all text inputs are manageable and suitable for model training.
+
+---
+
+### **Label Distribution Across Languages**
+**Description:**
+This grouped bar chart depicts the label distribution across various languages in the training dataset.
+![image](https://github.com/user-attachments/assets/8e2c0a2d-a591-431f-8a52-2903f51bec5c)
+
+**Observations:**
+- For languages like **English**, all three labels (Neutral, Entailment, Contradiction) are represented in relatively high proportions.
+- For less frequent languages like **Bulgarian**, label distribution is sparser but still present across all categories.
+
+**Implications:**
+The balanced representation of labels across languages supports robust model training, although underrepresented languages may still require additional fine-tuning or external data for improved performance.
+
+---
 #### **Key Observations**
 - The dataset is diverse, with 15 different languages.
 - Labels are nearly balanced with slight variations across the dataset.
